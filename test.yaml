@@ -6,6 +6,7 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: nginx:1.14.2
+    image: 
+        image-registry.openshift-image-registry.svc:5000/default/nginx@sha256:06aa2038b42f1502b59b3a862b1f5980d3478063028d8e968f0810b9b0502380
     ports:
     - containerPort: 80
