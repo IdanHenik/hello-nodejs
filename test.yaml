@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
+  namespace: idan-test
   name: nginx-test
   app: nginx
 spec:
