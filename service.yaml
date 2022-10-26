@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: nginx
-  namespace: default
+  namespace: idan-test
   uid: 15ed2d63-8144-4cdc-91dc-442bc94b07aa
   resourceVersion: '316855'
   creationTimestamp: '2022-10-26T14:05:14Z'
