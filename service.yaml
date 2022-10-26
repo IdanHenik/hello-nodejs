@@ -1,65 +1,12 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: nginx
-  namespace: idan-test
-  uid: 15ed2d63-8144-4cdc-91dc-442bc94b07aa
-  resourceVersion: '316855'
-  creationTimestamp: '2022-10-26T14:05:14Z'
-  labels:
-    app: nginx
-    app.kubernetes.io/component: nginx
-    app.kubernetes.io/instance: nginx
-    app.kubernetes.io/name: nginx
-    app.kubernetes.io/part-of: nginx-app
-    app.openshift.io/runtime-version: latest
-  annotations:
-    openshift.io/generated-by: OpenShiftWebConsole
-  managedFields:
-    - manager: Mozilla
-      operation: Update
-      apiVersion: v1
-      time: '2022-10-26T14:05:14Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:annotations':
-            .: {}
-            'f:openshift.io/generated-by': {}
-          'f:labels':
-            .: {}
-            'f:app': {}
-            'f:app.kubernetes.io/component': {}
-            'f:app.kubernetes.io/instance': {}
-            'f:app.kubernetes.io/name': {}
-            'f:app.kubernetes.io/part-of': {}
-            'f:app.openshift.io/runtime-version': {}
-        'f:spec':
-          'f:internalTrafficPolicy': {}
-          'f:ports':
-            .: {}
-            'k:{"port":80,"protocol":"TCP"}':
-              .: {}
-              'f:name': {}
-              'f:port': {}
-              'f:protocol': {}
-              'f:targetPort': {}
-          'f:selector': {}
-          'f:sessionAffinity': {}
-          'f:type': {}
+  name: nginx-service
 spec:
-  ipFamilies:
-    - IPv4
+  selector:
+    app: nginx
   ports:
-    - name: 80-tcp
+    - name: http
       protocol: TCP
       port: 80
       targetPort: 80
-  internalTrafficPolicy: Cluster
-  type: ClusterIP
-  ipFamilyPolicy: SingleStack
-  sessionAffinity: None
-  selector:
-    app: nginx
-status:
-  loadBalancer: {}
